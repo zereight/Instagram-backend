@@ -3,20 +3,16 @@ import path from "path";
 dotenv.config( { path: path.resolve()+"/.env" });
 
 import { GraphQLServer } from "graphql-yoga";
+import schema from "./schema";
+import helmet from "helmet";
+import morgan from "morgan";
 
 const PORT = process.env.PORT;
 
-const typeDefs = `
-    type Query{
-        hello: String!
-    }
-`;
 
-const resolvers = {
-    Query: {
-        hello: ()=>"Hi!!"
-    }
-};
+const server = new GraphQLServer( {schema} );
 
-const server = new GraphQLServer({typeDefs, resolvers});
+server.express.use(helmet());
+server.express.use(morgan("dev"));
+
 server.start( PORT, ()=>{console.log(`Server Started on ${PORT}`)} )
