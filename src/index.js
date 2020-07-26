@@ -7,6 +7,8 @@ import schema from "./schema";
 import helmet from "helmet";
 import morgan from "morgan";
 
+import "./mongodb";
+
 const PORT = process.env.PORT;
 
 
