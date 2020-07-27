@@ -8,13 +8,14 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 import "./mongodb";
+import { authenticationJwt } from "./passport";
 
 const PORT = process.env.PORT;
 
-
-const server = new GraphQLServer( {schema} );
+const server = new GraphQLServer( {schema, context: ({request})=>{request}} );
 
 server.express.use(helmet());
 server.express.use(morgan("dev"));
+server.express.use(authenticationJwt);
 
 server.start( PORT, ()=>{console.log(`Server Started on ${PORT}`)} )
