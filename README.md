@@ -8,7 +8,8 @@ Instagram backend clone with express, mongodb, graphql
 - [x] Request Secret
 - [x] JWT token setting
 - [x] Confirm Secret (Login)
-- [ ] Like/unLike a Photo
+- [x] Like/unLike a Photo
+- [ ] Create Post
 - [ ] Comment on a Photo
 - [ ] Search by user
 - [ ] Search by location

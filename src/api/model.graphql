@@ -15,6 +15,7 @@ type User{
 }
 
 type Post {
+    id: ID!
     location: String
     caption: String!
     writer: User!

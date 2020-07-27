@@ -13,7 +13,9 @@ import { isAuthenticated } from "./middleware";
 
 const PORT = process.env.PORT;
 
-const server = new GraphQLServer( {schema, context: ({request})=>{request, isAuthenticated}} );
+const server = new GraphQLServer( {schema, context: ({request})=>{
+    return ({request, isAuthenticated})} 
+});
 
 server.express.use(helmet());
 server.express.use(morgan("dev"));
