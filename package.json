@@ -30,6 +30,7 @@
     "helmet": "^3.23.3",
     "merge-graphql-schemas": "^1.7.8",
     "mongoose": "^5.9.25",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "random-words": "^1.1.1"
   }
 }
