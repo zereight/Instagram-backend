@@ -1,5 +1,5 @@
 import User from "../../../models/User";
-import { generateSecret } from "../../../utils";
+import { generateSecret, sendSecretEmail } from "../../../utils";
 
 export default {
     Mutation: {
@@ -8,6 +8,7 @@ export default {
             const loginSecret = generateSecret();
             try{
                 await User.findOneAndUpdate({email}, {loginSecret});
+                sendSecretEmail(email, loginSecret);
                 return true;
             }catch(error){
                 console.log(error);
