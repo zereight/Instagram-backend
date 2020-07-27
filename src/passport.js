@@ -1,15 +1,13 @@
 import passport from "passport";
-import { ExtractJwt, JwtStrategy } from "passport-jwt";
+import { ExtractJwt, Strategy } from "passport-jwt";
 import User from "./models/User";
-
-console.log(process.env.JWT_SECRET);
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.JWT_SECRET
 }
 
-passport.use(new JwtStrategy(jwtOptions, async (payload, done)=>{
+passport.use(new Strategy(jwtOptions, async (payload, done)=>{
     try {
         const user = await User.findOne({id: payload.id});
         if(user) {
