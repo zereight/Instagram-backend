@@ -1,4 +1,5 @@
 import Post from "../../../models/Post";
+import User from "../../../models/User";
 
 export default {
     Mutation : {
@@ -20,6 +21,9 @@ export default {
                     likes: [],
                     comments: []
                 });
+                const thatUser = await User.findById({_id: writer._id}).populate("posts");
+                thatUser.posts.push(newPost._id);
+                thatUser.save();
                 return newPost;
             } catch (error) {
                 console.log(error);
