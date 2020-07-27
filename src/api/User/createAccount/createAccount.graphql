@@ -7,7 +7,3 @@ type Mutation {
         email: String!
     ): User!
 }
-
-type Query {
-    dummy: String
-}
