@@ -48,8 +48,7 @@ const userSchema = new mongoose.Schema({
         ref: "Room"
     },
     loginSecret: {
-        type: String,
-        required: true
+        type: String
     }
 });
 

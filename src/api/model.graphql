@@ -1,4 +1,5 @@
 type User{
+    id: ID!
     username: String!
     email: String!
     firstName: String
@@ -10,7 +11,7 @@ type User{
     likes: [Like!]!
     comments: [Comment!]!
     rooms: [Room!]!
-    loginSecret: String!
+    loginSecret: String
 }
 
 type Post {
@@ -23,27 +24,32 @@ type Post {
 }
 
 type Like {
+    id: ID!
     user: User!
     post: Post!
 }
 
 type Comment {
+    id: ID!
     text: String!
     user: User!
     post: Post!
 }
 
 type File {
+    id: ID!
     url: String!
     post: Post!
 }
 
 type Room{
+    id: ID!
     participants: [User!]!
     messages: [Message!]!
 }
 
 type Message {
+    id: ID!
     text: String!
     from: User!
     to: User!
