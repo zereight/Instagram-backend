@@ -16,9 +16,9 @@ export default {
 					post: postId
 				});
 				const thatPost = await Post.findById({ _id: postId }); //.populate("comments");
-				await thatPost.comments.push(newComment._id);
+				await thatPost.comments.push(newComment);
 				const thatUser = await User.findById({ _id: user.id }); //.populate("comments");
-				await thatUser.comments.push(newComment._id);
+				await thatUser.comments.push(newComment);
 
 				thatPost.save();
 				thatUser.save();

@@ -1,5 +1,6 @@
 import Post from '../../../models/Post';
 import File from '../../../models/File';
+import User from '../../../models/User';
 
 export default {
 	Mutation: {
@@ -25,10 +26,15 @@ export default {
 						newFiles.push(newFile);
 					})
 				);
-
 				newPost.attachedFiles = newFiles;
 				await newPost.depopulate('attachedFiles');
 				await newPost.save();
+
+				const me = await User.findById({ _id: user._id });
+				me.posts.push(newPost._id);
+
+				await me.save();
+
 				return newPost;
 			} catch (error) {
 				console.log(error);

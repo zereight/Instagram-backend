@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import Like from './Like';
+import Post from './Post';
+import Comment from './Comment';
 
 const userSchema = new mongoose.Schema({
 	username: {

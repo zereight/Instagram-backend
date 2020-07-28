@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import Like from './Like';
+import Comment from './Comment';
+import File from './File';
 
 const postSchema = new mongoose.Schema({
 	location: {
