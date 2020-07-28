@@ -21,7 +21,7 @@ Instagram backend clone with express, mongodb, graphql
 - [x] See the full Photo
 - [x] Upload a Photo
 - [x] Edit the Photo (+Delete)
-- [ ] See the feed
-- [ ] See rooms
-- [ ] See room
+- [x] See the feed
+- [x] See rooms
+- [x] See room
 - [ ] Receive Message (Realtime)
