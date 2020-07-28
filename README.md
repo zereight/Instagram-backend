@@ -20,7 +20,7 @@ Instagram backend clone with express, mongodb, graphql
 - [x] See My profile
 - [x] See the full Photo
 - [x] Upload a Photo
-- [ ] Edit the Photo (+Delete)
+- [x] Edit the Photo (+Delete)
 - [ ] See the feed
 - [ ] See rooms
 - [ ] See room
