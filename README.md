@@ -15,9 +15,9 @@ Instagram backend clone with express, mongodb, graphql
 - [x] Search by location
 - [x] Follow User
 - [x] UnFollow User
-- [ ] Edit user profile
-- [ ] See user profile
-- [ ] See My profile
+- [x] Edit user profile
+- [x] See user profile
+- [x] See My profile
 - [ ] See the full Photo
 - [ ] Upload a Photo
 - [ ] Edit the Photo (+Delete)
